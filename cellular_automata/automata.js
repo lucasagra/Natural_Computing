@@ -1,5 +1,5 @@
 let rows = 50;
-let cols = 100;
+let cols = 150;
 let rules = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [1,1,0], [0,1,0], [0,0,1], [0,0,0]]
 let size = 5;
 
@@ -17,16 +17,17 @@ for(let i = 0; i < 256; i++) {
 }
 
 function checkRule(rule, arr, x) {
-    if(arr[x-1] != rule[0]) return false;
-    if(arr[x] != rule[1]) return false;
-    if(arr[x+1] != rule[2]) return false;
+    x += cols
+    if(arr[(x-1)%cols] != rule[0]) return false;
+    if(arr[x%cols] != rule[1]) return false;
+    if(arr[(x+1)%cols] != rule[2]) return false;
     return true;
 }
 
 function nextStage(arr, ruleset) {
     let newArr = new Array(arr.length).fill(0);
 
-    for(let i = 1; i < arr.length-1; i++) {
+    for(let i = 0; i < arr.length; i++) {
         for(let j = 0; j < ruleset.length; j++) {
             if(checkRule(ruleset[j], arr, i)) {
                 newArr[i] = 1;
@@ -65,6 +66,8 @@ function reset() {
         matrix.push(new Array(cols).fill(0));
     }
     matrix[rows - 1][cols / 2] = 1;
+
+    console.log(ruleset);
 }
 
 function setup() {
