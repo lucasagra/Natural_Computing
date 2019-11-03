@@ -1,0 +1,33 @@
+
+html, body {
+    height: 100%;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    height: 70px;
+}
+
+body {
+    margin: 7%;
+    margin-top: 10px;
+
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+
+    /* This centers our sketch vertically. */
+    align-items: center;
+}
+
+.container {
+    padding-bottom: 20px;
+    width: 50%;
+    margin:auto;
+}
+
+.button {
+    display: inline-block;
+    position: center;
+
+}

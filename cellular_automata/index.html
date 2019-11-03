@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="p5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>Cellular Automata</title>
+</head>
+<body>
+    <h1>Wolfram Elementary Cellular Automata</h1>
+    
+    <div class="container">
+        <div class="row">
+            <div id="select" class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Rule...</label>
+                </div>
+                <select class="form-control" id="inputGroupSelect01" onchange="selectEvent(this.value)">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-primary" onclick="reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="canvas"></div>
+    
+    <script src="automata.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="bootstrap.min.js"></script>
+</body>
+</html>
