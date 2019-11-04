@@ -74,7 +74,7 @@ function setup() {
 
     let ruleset = dec2bin(0);
     frameRate(10);
-    size = (windowWidth / (cols * 2));
+    size = (windowWidth / (cols * 1.3));
     createCanvas(cols * size + 2, rows * size + 2).style('display', 'block').style('margin', 'auto').parent('canvas');
 }
 
@@ -96,6 +96,6 @@ function draw() {
     drawMatrix(matrix, size);
     matrix.shift(1);
     matrix.push(nextStage(matrix[matrix.length-1], ruleset));
-    size = (windowWidth/(cols*2));
+    size = (windowWidth/(cols*1.3));
 }
 
